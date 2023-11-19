@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  /* theme color */
+  :root {
+    --text-color-black: black;
+    --text-color: #fff;
+    --main-color: #EC4E20;
+  }
+  
+  /* text in home before login */
+  
+  body {
+    height: 100vh;
+  }
+  
+  main {
+    width: 80%;
+    margin: 0 auto;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .container {
+    position: relative;
+  }
+  
+  .container .slide-container .slide {
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .container .slide-container .slide .content {
+    flex: 1 1 600px;
+  }
+  
+  .container .slide-container .slide .image {
+    flex: 0 1 500px;
+  }
+  
+  .container .slide-container .slide .image img {
+    width: 100%;
+    animation: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .container .slide-container .slide .content h3 {
+    font-size: 60px;
+    color: #333;
+    margin-bottom: 0.3em;
+  }
+  
+  /* get a ride button in home before login */
+  
+  .btn {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+    transition: all .5s ease;
+    animation: slideleft 1.5s;
+  }
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   
+  }
+  
+  .btn span:after {
+    content: '\21c0';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+  .slide-left {
+    animation: slideleft .5s;
+  }
+  
+  /* Slide Animations */
+  /* Slide left */
+  @keyframes slideleft {
+    from {
+        right: -10%;
+        opacity: 0;
+    }
+    to {
+        right: 0%;
+        opacity: 1;
+    }
+  }
+  
+  /* Slide right for home text after login*/
+  @keyframes slideright {
+    from {
+        left: 1%;
+        opacity: 0;
+    }
+    to {
+        left: 8%;
+        opacity: 1;
+    }
+  }
+  
+  /* Slide down */
+  @keyframes slidedown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+  
+  @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+  }
+  /* ----------------------- */
+  /* home after login */
+  /* ---------------------- */
+  
+  .upperhome {
+    position: absolute;
+    top: 27%;
+    left: 8%;
+    transform: translateY(-50%);
+    animation: slideright 1s;
+  }
+  .upperhome h2 {
+    font-size: 80px;
+  }
+  .upperhome span {
+    color: var(--main-color);
+  }
+  
+  .upperhome p {
+    font-size: 2em;
+    font-weight: 600;
+    animation: slideright 3s;
+  }
+  
+  /* .bgimg img{
+    width: 45%;
+    position: absolute;
+    right: 0;
+  } */
+  
+  .accordion {
+    position: absolute;
+    top: 40%;
+    left: 6.5%;
+    width: 600px;
+  }
+  
+  .accordion li {
+    border-bottom: solid 1px black;
+    list-style: none;
+    width: 100%;
+    margin: 23px;
+  }
+  
+  .accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .accordion li label::before {
+    content: '+';
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  input[type="radio"]{
+    display: none;
+  }
+  
+  .accordion .content {
+    color: #555;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2s, padding 1s;
+  }
+  
+  .accordion input[type="radio"]:checked + label + .content{
+    max-height: 400px;
+    padding: 10px 10px 20px;
+  
+  }
+  
+  .accordion input[type="radio"]:checked + label::before {
+    content: '-';
+  }
+  
+  .btn-after-login {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 30px 80px;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+    transition: all .5s ease;
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+  }
+  
+  .btn-after-login span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   
+  }
+  
+  .btn-after-login span:after {
+    content: '\21c0';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn-after-login:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn-after-login:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+  .backimg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+  }
+  
+  .backimg img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
